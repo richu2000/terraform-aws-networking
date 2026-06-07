@@ -3,21 +3,25 @@ output "selected_region" {
 }
 
 output "vpc_id" {
-  value = aws_vpc.main.id
+  description = "VPC ID"
+  value       = module.vpc.vpc_id
 }
 
 output "public_subnet_id" {
-  value = aws_subnet.public.id
+  description = "Public Subnet ID"
+  value       = aws_subnet.public.id
 }
 
 output "internet_gateway_id" {
-  value = aws_internet_gateway.main.id
+  description = "Internet Gateway ID"
+  value       = aws_internet_gateway.main.id
 }
 
 output "route_table_id" {
-  value = aws_route_table.public.id
+  description = "Route Table ID"
+  value       = aws_route_table.public.id
 }
 
 output "security_group_id" {
-  value = aws_security_group.web.id
+  value = module.security_group.security_group_id
 }
